@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".fragemnts.ProfileFragment">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_margin="@dimen/dp16"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp25"
+        android:text="Profile"
+        android:layout_marginBottom="@dimen/dp20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            app:civ_border_color="@color/colorWhite"
+            app:civ_border_width="@dimen/dp3"
+            android:layout_marginRight="@dimen/dp20"
+            android:id="@+id/profile_image"
+            android:src="@mipmap/ic_avata"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+    </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp20"
+            android:paddingRight="@dimen/dp20">
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Họ và Tên"
+                android:textColor="@color/colorGreenDark" />
+            <TextView
+                android:id="@+id/txt_name_account"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:paddingTop="5dp"
+                android:text="Ngọc Mỹ"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:text="Email"
+                android:textColor="@color/colorGreenDark" />
+
+            <TextView
+                android:id="@+id/txt_email_account"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:drawablePadding="@dimen/dp20"
+                android:paddingTop="5dp"
+                android:text="myngoc@gmail.com"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:text="Số Điện Thoại"
+                android:textColor="@color/colorGreenDark" />
+
+            <TextView
+                android:id="@+id/txt_phone_account"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:drawablePadding="@dimen/dp20"
+                android:paddingTop="5dp"
+                android:text="1234567890"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:text="Địa Chỉ"
+                android:textColor="@color/colorGreenDark" />
+            <TextView
+                android:id="@+id/txt_address_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quận 9"
+                android:textSize="20sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginBottom="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp60"
+            android:layout_marginLeft="@dimen/dp60"
+            android:id="@+id/lnl_button_sign_out"
+            android:background="@drawable/radius_10_green"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40">
+            <TextView
+                android:textSize="@dimen/sp15"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Đăng xuất"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

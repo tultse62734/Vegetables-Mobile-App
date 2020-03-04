@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/BackUpVofr/BackupVOFRMobile" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BackupVOFRMobile" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/hmrapp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/identifyface" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/passio-android" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/passiomanager-android" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/recruitstudentfpt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/resomanager" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/scrapproject" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swd-project" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/unideli-android" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vietasian" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vietasianstaff" vcs="Git" />
+  </component>
+</project>

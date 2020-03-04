@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorRed">#FC0321</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorBlue">#2b7dbf</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorOrgane">#ff6600</color>
+    <color name="colorYellow">#F3D409</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorGray">#707070</color>
+    <color name="colorBlack">#000000</color>
+    <color name="background">#f9f9f9</color>
+    <color name="colorGrayHint">#b4b4b4</color>
+    <color name="title">#37474f</color>
+    <color name="title_news">#000000</color>
+    <color name="background_pink">#fff0e5</color>
+    <color name="colorBlueWhite">#aac5ee</color>
+    <color name="colorGreen">#45BB07</color>
+    <color name="colorGreenDark">#145E0C</color>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:pp="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:tint="@color/colorGreenDark"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:src="@drawable/vector8"
+        android:scaleType="fitXY"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPagerHome"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <eu.long1.spacetablayout.SpaceTabLayout
+            app:tab_color="@color/colorGreenDark"
+            app:button_color="@color/colorGreenDark"
+            android:id="@+id/spaceTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp80"
+            app:layout_behavior="eu.long1.spacetablayout.SpaceTabLayoutBehavior"
+            app:number_of_tabs="three"
+            app:starting_position="one"
+            app:text_one=""
+            app:text_two=""
+            app:text_three=""
+            app:icon_one="@drawable/ic_home"
+            app:icon_two="@drawable/ic_cate"
+            app:icon_three="@drawable/ic_user_menu"/>
+    </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ProductDetailActivity">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:tint="@color/colorGreenDark"
+                android:scaleType="fitXY"
+                android:src="@drawable/vector8"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+            </ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp20"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+                    <TextView
+                        android:layout_marginBottom="@dimen/dp20"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sản Phẩm "
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp25"
+                        android:layout_weight="5"/>
+                    <LinearLayout
+                        android:id="@+id/lnl_dismiss"
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right">
+                        <ImageView
+                            android:tint="@color/colorGreenDark"
+                            android:id="@+id/img_product_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_cancel_blue"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="@dimen/dp10"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:id="@+id/image_product_detail"
+                            android:src="@drawable/ic_vegetables"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scaleType="fitXY"
+                            >
+                        </ImageView>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp15">
+                        <TextView
+                            android:textStyle="bold"
+                            android:textColor="@color/colorGreenDark"
+                            android:id="@+id/txt_product_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/dp20"
+                            android:text="Chuối" />
+                        <TextView
+                            android:textColor="@color/colorRed"
+                            android:textStyle="bold"
+                            android:id="@+id/txt_product_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/dp20"
+                            android:text="300.000đ"/>
+                        <ImageView
+                            android:tint="@color/colorYellow"
+                            android:src="@mipmap/ic_rating"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </ImageView>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:layout_weight="6"
+                        android:weightSum="10"
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="10"
+                            android:gravity="center">
+                            <ImageView
+                                android:backgroundTint="@color/colorGreenDark"
+                                android:id="@+id/image_decrease_setting_order"
+                                android:layout_width="@dimen/dp70"
+                                android:layout_height="@dimen/dp70"
+                                android:padding="@dimen/dp16"
+                                android:src="@mipmap/ic_negative"
+                                />
+                            <EditText
+                                android:text="1"
+                                android:textStyle="bold"
+                                android:id="@+id/edit_text_quantity_product"
+                                android:layout_width="@dimen/dp80"
+                                android:layout_height="wrap_content"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorGreenDark"
+                                android:textSize="@dimen/sp25" />
+
+                            <ImageView
+                                android:id="@+id/image_increase_setting_order"
+                                android:layout_width="@dimen/dp70"
+                                android:layout_height="@dimen/dp70"
+                                android:padding="@dimen/dp16"
+                                android:src="@mipmap/ic_plus_circular" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginBottom="@dimen/dp20"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/txt_description"
+                        android:text="Rau là tên gọi chung của các loại thực vật có thể ăn được dưới dạng lá là phổ biến tuy trong thực tế có nhiều loại ăn hoa, củ, quả cũng có thể gộp chung vào các loại rau."
+                        android:textSize="@dimen/sp18"
+                        android:textColor="@color/colorGray"
+                        android:textStyle="normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/dp20"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+                        <TextView
+                            android:gravity="right"
+                            android:textStyle="bold"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Tổng tiền: "
+                            android:textColor="@color/colorGreenDark"
+                            android:textSize="@dimen/dp18"
+                            android:layout_weight="6"/>
+                        <TextView
+                            android:id="@+id/product_total_price"
+                            android:textStyle="bold"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="300.000đ"
+                            android:textColor="@color/colorRed"
+                            android:textSize="@dimen/dp18"
+                            android:layout_weight="4"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <Button
+                    android:layout_marginRight="@dimen/dp20"
+                    android:layout_marginLeft="@dimen/dp20"
+                    android:id="@+id/btn_add_to_cart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thêm Vào Giỏ Hàng"
+                    android:layout_gravity="end"
+                    android:background="@drawable/radius_10_green"
+                    android:textColor="@color/colorWhite"
+                    />
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
