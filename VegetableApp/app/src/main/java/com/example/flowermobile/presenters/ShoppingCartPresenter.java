@@ -48,7 +48,7 @@ mView.showError(message);
         mOrderItemManagement.deleteOrderItem(orderItemEntities);
     }
     public void deleteOrder(){
-        mOrderItemManagement.deleteAllAccount();
+        mOrderItemManagement.deleteAllOrder();
         this.mDeleteOrderView.deleteOrderSuccess("thành công");
     }
 }

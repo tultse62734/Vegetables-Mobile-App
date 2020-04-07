@@ -6,6 +6,7 @@ import android.content.Context;
 import com.example.flowermobile.rooms.OrderItemEntities;
 import com.example.flowermobile.rooms.management.OrderItemManagement;
 import com.example.flowermobile.views.AddToCartView;
+import com.example.flowermobile.views.DeleteCardView;
 import com.example.flowermobile.views.UpdateCardView;
 import java.util.List;
 public class CartPresenter {
@@ -14,6 +15,7 @@ public class CartPresenter {
    private OrderItemManagement orderItemManagement;
    private AddToCartView view;
    private UpdateCardView mView;
+   private DeleteCardView mDeleteCardView;
 
     public CartPresenter(Context context, Application application, AddToCartView view) {
         this.context = context;
@@ -27,6 +29,7 @@ public class CartPresenter {
         this.orderItemManagement = new OrderItemManagement(mApplication);
         this.mView = mView;
     }
+
     public void addToCart(OrderItemEntities o){
         orderItemManagement.addOrderItem(o);
         view.onSuccess();

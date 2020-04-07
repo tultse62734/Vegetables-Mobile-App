@@ -13,12 +13,15 @@ import com.example.flowermobile.R;
 import com.example.flowermobile.adapters.ShopCartAdapter;
 import com.example.flowermobile.adapters.SwipeToDeleteCallback;
 import com.example.flowermobile.models.Order;
+import com.example.flowermobile.presenters.DeleteCardToShoppingPresenter;
 import com.example.flowermobile.presenters.InformationAccountPresenter;
 import com.example.flowermobile.presenters.OrderPresenter;
 import com.example.flowermobile.presenters.ShoppingCartPresenter;
 import com.example.flowermobile.rooms.OrderItemEntities;
+import com.example.flowermobile.utils.BundleString;
 import com.example.flowermobile.utils.ChangeValue;
 import com.example.flowermobile.utils.SharePreferenceUtils;
+import com.example.flowermobile.views.DeleteCardView;
 import com.example.flowermobile.views.OrderView;
 import com.example.flowermobile.views.ShoppingCartView;
 
@@ -27,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-public class ShoppingCartActivity extends AppCompatActivity implements ShoppingCartView, View.OnClickListener, OrderView {
+public class ShoppingCartActivity extends AppCompatActivity implements ShoppingCartView, View.OnClickListener, OrderView, DeleteCardView {
     private RecyclerView mRcvShopCart;
     private List<OrderItemEntities> mListOrder;
     private ShopCartAdapter mShopCartApdapter;
@@ -36,6 +39,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements ShoppingC
     private float mTotal=0;
     private OrderPresenter mOrderPresenter;
     private int userId;
+    private DeleteCardToShoppingPresenter mDeleteCardToShoppingPresenter;
     private TextView mTxtTotal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,10 +114,11 @@ public class ShoppingCartActivity extends AppCompatActivity implements ShoppingC
         Order order = new Order();
         order.setUserId(userId);
         order.setTotal(mTotal/2);
-        order.setNotes("Khuyến mãi 50%");
+        String address = SharePreferenceUtils.getStringSharedPreference(ShoppingCartActivity.this, BundleString.ADDRESSSTORE);
+        order.setNotes(address);
         Calendar cal = Calendar.getInstance();
          Date date = cal.getTime();
-         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         order.setOrderDate(sdf.format(date));
         mOrderPresenter.order(order);
     }
@@ -124,7 +129,6 @@ public class ShoppingCartActivity extends AppCompatActivity implements ShoppingC
                 updateUI();
                 costTotal(orderItemEntities);
                 enableSwipeToDeleteAndUndo(mListOrder);
-
             }
     }
     @Override
@@ -134,12 +138,20 @@ public class ShoppingCartActivity extends AppCompatActivity implements ShoppingC
 
     @Override
     public void orderSuccess(String success) {
-        Intent intent = new Intent(ShoppingCartActivity.this,HomeActivity.class);
-        startActivity(intent);
+        mDeleteCardToShoppingPresenter = new DeleteCardToShoppingPresenter(ShoppingCartActivity.this,getApplication(),this);
+        mDeleteCardToShoppingPresenter.deleteAllOrder();
     }
 
     @Override
     public void orderFail(String messgae) {
 
+    }
+    @Override
+    public void deleteAllCard(String messgae) {
+        Intent intent = new Intent(ShoppingCartActivity.this,HomeActivity.class);
+        startActivity(intent);
+    }
+    @Override
+    public void deleteFail(String message) {
     }
 }

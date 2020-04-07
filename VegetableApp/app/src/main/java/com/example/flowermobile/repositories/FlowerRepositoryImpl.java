@@ -5,10 +5,13 @@ import android.content.Context;
 import com.example.flowermobile.models.Account;
 import com.example.flowermobile.models.Category;
 import com.example.flowermobile.models.Order;
+import com.example.flowermobile.models.OrderHistory;
 import com.example.flowermobile.models.Product;
+import com.example.flowermobile.models.Store;
 import com.example.flowermobile.models.User;
 import com.example.flowermobile.utils.CallBackData;
 import com.example.flowermobile.utils.ClientApi;
+import com.example.flowermobile.utils.ConfigAPI;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -214,6 +217,78 @@ public class FlowerRepositoryImpl implements FloweRepositoty {
                     callBackData.onFail("Load Fail");
                 }
             }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            }
+        });
+    }
+
+    @Override
+    public void getAllStore(Context mContext, final CallBackData<List<Store>> callBackData) {
+        ClientApi clientApi = new ClientApi();
+        Call<ResponseBody> serviceCall = clientApi.Services().getAllStore();
+        serviceCall.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.code() == 200 && response != null ){
+                    String result = null;
+                    try {
+                        result = response.body().string();
+                        Type type = new TypeToken<List<Store>>(){}.getType();
+                        List<Store> mStoreList = new Gson().fromJson(result, type);
+                        if(mStoreList!=null){
+                            callBackData.onSucess(mStoreList);
+                        }
+                        else {
+                            callBackData.onFail("load fail");
+                        }
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }else {
+                    callBackData.onFail("Load Fail");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+    @Override
+    public void getAllOrder(Context mContext, final CallBackData<List<OrderHistory>> callBackData) {
+        ClientApi clientApi = new ClientApi();
+        Call<ResponseBody> serviceCall = clientApi.Services().getAllOrder();
+        serviceCall.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.code() == 200 && response != null ){
+                    String result = null;
+                    try {
+                        result = response.body().string();
+                        Type type = new TypeToken<List<OrderHistory>>(){}.getType();
+                        List<OrderHistory> mOrderHistoryList = new Gson().fromJson(result, type);
+                        if(mOrderHistoryList!=null){
+                            callBackData.onSucess(mOrderHistoryList);
+                        }
+                        else {
+                            callBackData.onFail("load fail");
+                        }
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }else {
+                    callBackData.onFail("Load Fail");
+                }
+            }
+
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
 

@@ -12,6 +12,8 @@
     <color name="colorBlack">#000000</color>
     <color name="background">#f9f9f9</color>
     <color name="colorGrayHint">#b4b4b4</color>
+    <color name="colorMidGrey">#EFEFEF</color>
+
     <color name="title">#37474f</color>
     <color name="title_news">#000000</color>
     <color name="background_pink">#fff0e5</color>

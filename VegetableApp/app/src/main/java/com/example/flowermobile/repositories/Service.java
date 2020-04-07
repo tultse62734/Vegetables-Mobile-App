@@ -27,4 +27,8 @@ public interface Service {
     @POST(ConfigAPI.Api.CREATEORDER)
     @Headers({"Content-Type: application/json"})
     Call<ResponseBody> createOrder(@Body RequestBody mRequestBody);
+    @GET(ConfigAPI.Api.GETALLSTORE)
+    Call<ResponseBody> getAllStore();
+    @GET(ConfigAPI.Api.GETALLORDER)
+    Call<ResponseBody> getAllOrder();
 }

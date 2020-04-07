@@ -1,5 +1,4 @@
 package com.example.flowermobile.activities;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -20,7 +19,6 @@ import com.example.flowermobile.views.AddToRoomView;
 import com.example.flowermobile.views.LoginView;
 
 import java.util.UUID;
-
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, LoginView, AddToRoomView {
     private EditText mEdtUsername,mEdtPassword;
     private LinearLayout mBtnLogin,mBtnSignUp;
@@ -83,7 +81,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void addToRoomSuccess() {
-        Intent intent  = new Intent(LoginActivity.this,HomeActivity.class);
+        Intent intent  = new Intent(LoginActivity.this,StoreActivity.class);
         startActivity(intent);
     }
 }

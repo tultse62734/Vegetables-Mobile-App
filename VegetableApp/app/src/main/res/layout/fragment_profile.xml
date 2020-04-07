@@ -10,16 +10,49 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <TextView
-        android:layout_margin="@dimen/dp16"
-        android:textStyle="bold"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/sp25"
-        android:text="Profile"
-        android:layout_marginBottom="@dimen/dp20"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </TextView>
+        <LinearLayout
+            android:weightSum="10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="5"
+                android:layout_margin="@dimen/dp16"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp25"
+                android:text="Profile"
+                android:layout_marginBottom="@dimen/dp20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+            </TextView>
+            <LinearLayout
+                android:layout_marginRight="@dimen/dp16"
+                android:gravity="right"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/lnl_order_history"
+                    android:backgroundTint="@color/colorGreenDark"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="@drawable/circular_background"
+                    android:layout_width="@dimen/dp60"
+                    android:layout_height="@dimen/dp60">
+                    <ImageView
+                        android:tint="@color/colorWhite"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/ic_order"
+                        android:layout_width="@dimen/dp30"
+                        android:layout_height="@dimen/dp30">
+
+                    </ImageView>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:orientation="vertical"

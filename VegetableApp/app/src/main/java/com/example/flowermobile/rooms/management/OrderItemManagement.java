@@ -139,7 +139,7 @@ public class OrderItemManagement {
             super.onPostExecute(aVoid);
         }
     }
-    public void deleteAllAccount() {
+    public void deleteAllOrder() {
         DeleteAllOrderAsync deleteAsync = new DeleteAllOrderAsync(orderDAO);
         deleteAsync.execute();
     }

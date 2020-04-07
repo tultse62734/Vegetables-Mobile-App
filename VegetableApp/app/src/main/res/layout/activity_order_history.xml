@@ -3,25 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".activities.StoreActivity">
+    android:orientation="vertical"
+    tools:context=".activities.OrderHistoryActivity">
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_store"
-        app:title="Cửa hàng"
-        app:titleTextColor="@color/colorWhite"
+        app:title="Lịch sử đơn hàng"
+        android:id="@+id/toolbar_history_order"
         android:background="@color/colorGreenDark"
+        app:titleTextColor="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
     </androidx.appcompat.widget.Toolbar>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcv_store"
-        android:background="@color/colorWhite"
-        android:layout_marginRight="@dimen/dp16"
-        android:layout_marginLeft="@dimen/dp16"
+        android:id="@+id/rcv_history_order"
         android:layout_marginTop="@dimen/dp20"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginRight="@dimen/dp16"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
     </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>
